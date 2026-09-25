@@ -6,9 +6,10 @@ import { FaFire, FaStar } from "react-icons/fa";
 
 interface ISavedTabProps {
     savedExercise: IExcercise[];
+    sortedSaved: IExcercise[];
 }
 
-const SavedTab = ({ savedExercise }: ISavedTabProps) => {
+const SavedTab = ({ savedExercise, sortedSaved }: ISavedTabProps) => {
     if (savedExercise.length === 0) {
         return (
             <div className="flex min-h-60 flex-col items-center justify-center rounded-xl border border-dashed border-gray-800">
@@ -21,7 +22,7 @@ const SavedTab = ({ savedExercise }: ISavedTabProps) => {
 
     return (
         <div className="flex flex-col gap-3">
-            {savedExercise.map((exercise) => (
+            {sortedSaved.map((exercise) => (
                 <div key={exercise.id} className="flex flex-col gap-4 rounded-xl border border-gray-800 bg-[#15171D] p-3 md:flex-row md:items-center">
                     <div className="relative h-48 w-full overflow-hidden rounded-lg md:h-24 md:w-30">
                         <Image src={exercise.image} alt={exercise.name} fill className="object-cover object-center" />

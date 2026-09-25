@@ -7,9 +7,10 @@ import { FaFire, FaStar } from "react-icons/fa";
 interface IPlanTabProps {
     exercises: IExcercise[];
     isPlan?: boolean;
+    sortedPlan: IExcercise[];
 }
 
-const PlanTab = ({ exercises, isPlan = true }: IPlanTabProps) => {
+const PlanTab = ({ exercises, isPlan = true, sortedPlan }: IPlanTabProps) => {
     if (exercises.length === 0) {
         return (
             <div className="flex min-h-60 flex-col items-center justify-center rounded-xl border border-dashed border-gray-800">
@@ -22,7 +23,7 @@ const PlanTab = ({ exercises, isPlan = true }: IPlanTabProps) => {
 
     return (
         <div className="flex flex-col gap-3">
-            {exercises.map((exercise) => (
+            {sortedPlan.map((exercise) => (
                 <div key={exercise.id} className="flex flex-col gap-4 rounded-xl border border-gray-800 bg-[#15171D] p-3 md:flex-row md:items-center">
                     <div className="relative h-48 w-full overflow-hidden rounded-lg md:h-24 md:w-30">
                         <Image src={exercise.image} alt={exercise.name} fill className="object-cover object-center" />
