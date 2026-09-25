@@ -14,18 +14,20 @@ const Navbar = () => {
               </svg>
             </div>
             <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="./Workouts">Workouts</Link></li>
+              <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="/Workouts">Workouts</Link></li>
               <li className="font-semibold rounded-4xl"><a>My Plan</a></li>
             </ul>
           </div>
-          <div className="flex gap-2 items-center">
-            <Image src={Logo} alt="Logo" />
-            <h2 className="[font-family:var(--font-oswald)] font-bold text-2xl text-center">FITLOG</h2>
-          </div>
+          <Link href="/">
+              <div className="flex gap-2 items-center">
+                <Image src={Logo} alt="Logo" />
+                <h2 className="[font-family:var(--font-oswald)] font-bold text-2xl text-center">FITLOG</h2>
+              </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="./Workouts">Workouts</Link></li>
+            <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="/Workouts">Workouts</Link></li>
             <li className="font-semibold rounded-4xl"><a>My Plan</a></li>
           </ul>
         </div>
