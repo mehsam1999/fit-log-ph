@@ -1,14 +1,26 @@
 'use client'
 import { ExercisesContext } from "@/context/ExercisesContext";
 import { IExcercise } from "@/types/exercise";
-import { useContext } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import { FiBookmark } from "react-icons/fi";
 import { toast } from "react-toastify";
 
 
 const SavedButton = ({exercise}: {exercise: IExcercise}) => {
-    const {savedExercise, setSavedExercise} = useContext(ExercisesContext)
+    const { savedExercise, setSavedExercise } = useContext(ExercisesContext) as {
+        savedExercise: IExcercise[];
+        setSavedExercise: Dispatch<SetStateAction<IExcercise[]>>;
+    };
         const handleSavedButton = () =>{
+            const alreadySaved = savedExercise.some(
+            (item) => item.id === exercise.id
+        );
+
+        if (alreadySaved) {
+            toast.error(`"${exercise.name}" is already saved`);
+            return;
+        }
+
             setSavedExercise([...savedExercise, exercise])
             toast.info(`You have successfully saved "${exercise.name}" for later`)
         }
