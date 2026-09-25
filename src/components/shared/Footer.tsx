@@ -3,13 +3,13 @@ import FooterLogo from "@/assets/footerLogo.png";
 
 const Footer = () => {
     return (
-        <footer>
-            <div className="flex flex-col gap-4 px-4 py-5 md:flex-row md:items-center md:justify-between md:gap-0">
-                <div className="flex gap-2 items-center">
-                    <Image src={FooterLogo} className="w-9 h-9 md:w-12 md:h-12 object-contain" alt="Logo" />
-                    <h2 className="[font-family:var(--font-oswald)] font-bold text-xl md:text-2xl text-center">FITLOG</h2>
+        <footer className="border-t border-gray-700">
+            <div className="container mx-auto flex flex-col items-center justify-between gap-4 py-5 px-2 md:flex-row md:gap-0">
+                <div className="flex items-center gap-2">
+                    <Image src={FooterLogo} className="h-9 w-9 object-contain md:h-12 md:w-12" alt="FITLOG Logo" />
+                    <h2 className="[font-family:var(--font-oswald)] text-xl font-bold md:text-2xl">FITLOG</h2>
                 </div>
-                <p className="[font-family:var(--font-inter)] text-xs md:text-base text-gray-500">© 2026 FitLog — Workout Library. Train hard, log honest.</p>
+                <p className="text-center [font-family:var(--font-inter)] text-xs text-gray-500 md:text-right md:text-base">© 2026 FitLog — Workout Library. Train hard, log honest.</p>
             </div>
         </footer>
     );
