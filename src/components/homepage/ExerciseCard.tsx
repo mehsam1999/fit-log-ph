@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { IExcercise } from "@/types/exercise";
-import { FaFire, FaStar } from "react-icons/fa";
+import { FaFire, FaRegStar } from "react-icons/fa";
 import { FiClock } from "react-icons/fi";
 
 interface IExerciseCardProps {
@@ -21,9 +21,9 @@ const ExerciseCard = ({ exercise }: IExerciseCardProps) => {
                 <p className="mt-1 text-gray-500">{exercise.equipment}</p>
                 <div className="mt-3 flex items-center gap-4 border-t border-gray-800 pt-3 text-gray-500">
                     <div className="flex items-center gap-4 border-gray-800 pt-3 text-gray-500">
-                        <span className="flex items-center gap-1"><FiClock /> {exercise.duration} min</span>
-                        <span className="flex items-center gap-1"><FaFire /> {exercise.caloriesBurned} kcal</span>
-                        <span className="flex items-center gap-1"><FaStar /> {exercise.rating}</span>
+                        <span className="flex items-center gap-1"><FiClock className="text-[#C2F800]"/> {exercise.duration} min</span>
+                        <span className="flex items-center gap-1"><FaFire className="text-[#C2F800]" /> {exercise.caloriesBurned} kcal</span>
+                        <span className="flex items-center gap-1"><FaRegStar className="text-[#C2F800]" /> {exercise.rating}</span>
                     </div>
                 </div>
             </div>

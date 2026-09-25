@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Logo from "@/assets/logo.png";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -13,7 +14,7 @@ const Navbar = () => {
               </svg>
             </div>
             <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><a>Workouts</a></li>
+              <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="./Workouts">Workouts</Link></li>
               <li className="font-semibold rounded-4xl"><a>My Plan</a></li>
             </ul>
           </div>
@@ -24,7 +25,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><a>Workouts</a></li>
+            <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="./Workouts">Workouts</Link></li>
             <li className="font-semibold rounded-4xl"><a>My Plan</a></li>
           </ul>
         </div>
