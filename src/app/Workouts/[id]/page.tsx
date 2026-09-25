@@ -1,8 +1,8 @@
+import PlanButton from "@/components/exerciseDetails/PlanButton";
+import SavedButton from "@/components/exerciseDetails/SavedButton";
 import { IExcercise } from "@/types/exercise";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { FiBookmark } from "react-icons/fi";
-import { GrFormSchedule } from "react-icons/gr";
 
 interface IExerciseDetailsPageProps {
     params: Promise<{
@@ -99,8 +99,8 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
                     </div>
 
                     <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <button className="btn flex items-center gap-2 border-0 bg-[#C2F800] px-6 text-black hover:bg-[#b8ed00]"><GrFormSchedule className="text-2xl" /> Add to today&apos;s plan</button>
-                        <button className="btn flex items-center gap-2 border border-gray-700 bg-transparent px-6 text-gray-300 hover:bg-[#15171D]"><FiBookmark className="text-xl" /> Save for later</button>
+                        <PlanButton exercise={exercise}></PlanButton>
+                        <SavedButton exercise={exercise}></SavedButton>
                     </div>
                 </div>
             </div>

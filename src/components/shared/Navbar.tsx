@@ -28,12 +28,12 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li className="bg-[#1A2312] text-[#C2F800] font-semibold rounded-4xl"><Link href="/Workouts">Workouts</Link></li>
-            <li className="font-semibold rounded-4xl"><a>My Plan</a></li>
+            <li className="font-semibold rounded-4xl"><Link href="/MyPlan">My Plan</Link></li>
           </ul>
         </div>
         <div className="navbar-end flex gap-2">
-          <a className="btn">Plan</a>
-          <a className="btn">Saved</a>
+          <Link href="/MyPlan"><button className="btn">Plan</button></Link>
+          <Link href="/MyPlan"><button className="btn">Saved</button></Link>
         </div>
       </div>
     </nav>
