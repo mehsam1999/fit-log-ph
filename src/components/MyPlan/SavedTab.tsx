@@ -1,8 +1,13 @@
+"use client";
+
+import { ExercisesContext } from "@/context/ExercisesContext";
 import { IExcercise } from "@/types/exercise";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
 import { FiClock, FiX } from "react-icons/fi";
 import { FaFire, FaStar } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 interface ISavedTabProps {
     savedExercise: IExcercise[];
@@ -10,6 +15,16 @@ interface ISavedTabProps {
 }
 
 const SavedTab = ({ savedExercise, sortedSaved }: ISavedTabProps) => {
+    const { savedExercise: savedExercises, setSavedExercise } = useContext(ExercisesContext) as {
+        savedExercise: IExcercise[];
+        setSavedExercise: React.Dispatch<React.SetStateAction<IExcercise[]>>;
+    };
+
+    const handleRemove = (id: number, name: string) => {
+        setSavedExercise(savedExercises.filter((exercise) => exercise.id !== id));
+        toast.success(`"${name}" has been removed from saved`);
+    };
+
     if (savedExercise.length === 0) {
         return (
             <div className="flex min-h-60 flex-col items-center justify-center rounded-xl border border-dashed border-gray-800">
@@ -41,7 +56,7 @@ const SavedTab = ({ savedExercise, sortedSaved }: ISavedTabProps) => {
 
                     <div className="flex flex-wrap items-center gap-2">
                         <Link href={`/Workouts/${exercise.id}`} className="btn rounded-full border border-gray-700 bg-transparent px-5 text-xs text-gray-300 hover:bg-[#1A1D24]">View Details</Link>
-                        <button className="btn btn-ghost btn-circle text-gray-500 hover:bg-transparent hover:text-white"><FiX /></button>
+                        <button className="btn btn-ghost btn-circle text-gray-500 hover:bg-transparent hover:text-white" onClick={() => handleRemove(exercise.id, exercise.name)}><FiX /></button>
                     </div>
                 </div>
             ))}

@@ -1,8 +1,13 @@
+"use client";
+
+import { ExercisesContext } from "@/context/ExercisesContext";
 import { IExcercise } from "@/types/exercise";
 import Image from "next/image";
 import Link from "next/link";
-import { FiClock, FiX } from "react-icons/fi";
+import { useContext } from "react";
+import { FiCheck, FiClock, FiX } from "react-icons/fi";
 import { FaFire, FaStar } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 interface IPlanTabProps {
     exercises: IExcercise[];
@@ -11,6 +16,21 @@ interface IPlanTabProps {
 }
 
 const PlanTab = ({ exercises, isPlan = true, sortedPlan }: IPlanTabProps) => {
+    const { planExercise, setPlanExercise } = useContext(ExercisesContext) as {
+        planExercise: IExcercise[];
+        setPlanExercise: React.Dispatch<React.SetStateAction<IExcercise[]>>;
+    };
+
+    const handleRemove = (id: number, name: string) => {
+        setPlanExercise(planExercise.filter((exercise) => exercise.id !== id));
+        toast.success(`"${name}" has been removed from today's plan`);
+    };
+
+    const handleMarkAsDone = (id: number, name: string) => {
+        setPlanExercise(planExercise.filter((exercise) => exercise.id !== id));
+        toast.success(`"${name}" has been marked as done`);
+    };
+
     if (exercises.length === 0) {
         return (
             <div className="flex min-h-60 flex-col items-center justify-center rounded-xl border border-dashed border-gray-800">
@@ -44,10 +64,10 @@ const PlanTab = ({ exercises, isPlan = true, sortedPlan }: IPlanTabProps) => {
                         <Link href={`/Workouts/${exercise.id}`} className="btn rounded-full border border-gray-700 bg-transparent px-5 text-xs text-gray-300 hover:bg-[#1A1D24]">View Details</Link>
 
                         {isPlan && (
-                            <button className="btn rounded-full border-0 bg-[#C2F800] px-5 text-xs font-semibold text-black hover:bg-[#b8ed00]">✓ Mark as Done</button>
+                            <button className="btn flex items-center gap-2 rounded-full border-0 bg-[#C2F800] px-5 text-xs font-semibold text-black hover:bg-[#b8ed00]" onClick={() => handleMarkAsDone(exercise.id, exercise.name)}><FiCheck /> Mark as Done</button>
                         )}
 
-                        <button className="btn btn-ghost btn-circle text-gray-500 hover:bg-transparent hover:text-white"><FiX /></button>
+                        <button className="btn btn-ghost btn-circle text-gray-500 hover:bg-transparent hover:text-white" onClick={() => handleRemove(exercise.id, exercise.name)}><FiX /></button>
                     </div>
                 </div>
             ))}

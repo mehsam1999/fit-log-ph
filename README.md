@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 💻 Project Name
 
-## Getting Started
+**FITLOG**
 
-First, run the development server:
+## 🔗 Live Website Link 
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 Description
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+FITLOG is an interactive, dark exercise library that was designed to let users browse exercises, learn more about an exercise and create a workout profile. They can add exercises to today's plan, save workouts for later on, manage their plan selections, sort exercises and record basic workout statistics.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Technologies Used
 
-## Learn More
+- Next.js
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- React Icons
+- React Toastify
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Exercise Exploration and Details:** Users are able to search and find workout details like target muscle groups, difficult level, duration, calories, rating and instructions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Personalized Workout Plan:** Users can add exercises to Today's Plan and plan their workouts. The plan also shows the overall amount of exercises, workout length and an estimated calorie count.
+ 
+- **Save Workouts for Later:** Users can save their preferred exercises and access them from the Saved tab. Exercises are not repeated and users are alerted by toast messages for repeated and successful actions.
 
-## Deploy on Vercel
+- **Exercise Plan:** Users can mark workouts as completed and can delete workouts from the plan and save list. The workout statistics automatically refresh themselves when exercises are deleted or finished.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Sorting and Responsive UI:** Users can sort their workout list by Duration, Calories or Rating. The application also features a dark theme appearance with loading states, toast appearance and responsive appearance at various screen sizes.

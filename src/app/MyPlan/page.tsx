@@ -19,7 +19,7 @@ const MyPlan = () => {
         const sortedExercises = [...exercise];
 
         if (sortBy === "duration") {
-            sortedExercises.sort((a, b) => a.duration - b.duration);
+            sortedExercises.sort((a, b) => b.duration - a.duration);
         }
 
         if (sortBy === "caloriesBurned") {
