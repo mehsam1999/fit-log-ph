@@ -36,7 +36,7 @@ const PlanTab = ({ exercises, isPlan = true, sortedPlan }: IPlanTabProps) => {
             <div className="flex min-h-60 flex-col items-center justify-center rounded-xl border border-dashed border-gray-800">
                 <h2 className="[font-family:var(--font-oswald)] text-lg font-bold uppercase text-white">NOTHING HERE YET</h2>
                 <p className="mt-1 text-xs text-gray-500">Browse the library and add a lift to get today moving.</p>
-                <Link href="/Workouts" className="btn mt-4 rounded-full border-0 bg-[#C2F800] px-6 text-xs font-semibold text-black hover:bg-[#b8ed00]">Go to workouts</Link>
+                <Link href="/" className="btn mt-4 rounded-full border-0 bg-[#C2F800] px-6 text-xs font-semibold text-black hover:bg-[#b8ed00]">Go to workouts</Link>
             </div>
         );
     }

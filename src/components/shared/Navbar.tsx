@@ -30,7 +30,7 @@ const Navbar = () => {
                 <Link href="/Workouts" className={`font-semibold rounded-4xl ${pathname.startsWith("/Workouts") ? "bg-[#1A2312] text-[#C2F800]" : "hover:bg-[#1A2312] hover:text-[#C2F800]"}`}>Workouts</Link>
               </li>
               <li className="rounded-4xl">
-                <Link href="/MyPlan" className={`font-semibold rounded-4xl ${pathname === "/MyPlan" ? "bg-[#1A2312] text-[#C2F800]" : "hover:bg-[#1A2312] hover:text-[#C2F800]"}`}>My Plan</Link>
+                <Link href="/my-plan" className={`font-semibold rounded-4xl ${pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : "hover:bg-[#1A2312] hover:text-[#C2F800]"}`}>My Plan</Link>
               </li>
             </ul>
           </div>
@@ -49,18 +49,18 @@ const Navbar = () => {
               <Link href="/Workouts" className={`font-semibold rounded-4xl ${pathname.startsWith("/Workouts") ? "bg-[#1A2312] text-[#C2F800]" : "hover:bg-[#1A2312] hover:text-[#C2F800]"}`}>Workouts</Link>
             </li>
             <li className="rounded-4xl">
-              <Link href="/MyPlan" className={`font-semibold rounded-4xl ${pathname === "/MyPlan" ? "bg-[#1A2312] text-[#C2F800]" : "hover:bg-[#1A2312] hover:text-[#C2F800]"}`}>My Plan</Link>
+              <Link href="/my-plan" className={`font-semibold rounded-4xl ${pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : "hover:bg-[#1A2312] hover:text-[#C2F800]"}`}>My Plan</Link>
             </li>
           </ul>
         </div>
 
         <div className="navbar-end flex gap-2">
-          <Link href="/MyPlan" className="flex items-center gap-2 px-2 py-1">
+          <Link href="/my-plan" className="flex items-center gap-2 px-2 py-1">
             <span className="text-sm font-semibold text-gray-300 hover:text-white">Plan</span>
             <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-[#C2F800] px-2 text-sm font-bold text-black">{planExercise.length}</span>
           </Link>
 
-          <Link href="/MyPlan" className="flex items-center gap-2 px-2 py-1">
+          <Link href="/my-plan" className="flex items-center gap-2 px-2 py-1">
             <span className="text-sm font-semibold text-gray-300 hover:text-white">Saved</span>
             <span className="flex h-7 min-w-7 items-center justify-center rounded-full border border-gray-700 px-2 text-sm font-semibold text-gray-300">{savedExercise.length}</span>
           </Link>
